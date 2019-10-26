@@ -5,6 +5,7 @@ using Revisor.ViewModel.Command;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Revisor.ViewModel
 {
@@ -42,9 +43,9 @@ namespace Revisor.ViewModel
         public async void ExecuteSelectObjectClick(object parameter)
         {
             var o = parameter;
-           // LocalContext.SetCurrentInventoryObject((int)o);
+           LocalContext.SetCurrentInventoryObject((int)o);
 
-           // await Shell.Current.Navigation.PushAsync(ViewService.SelectTypeWork);
+           await Shell.Current.Navigation.PushAsync(ViewService.SelectTypeOfWork);
         }
         public bool CanExecuteSelectObjectClick(object parameter)
         {

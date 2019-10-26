@@ -63,12 +63,12 @@ namespace Revisor.Service
                 if (AppDataBaseContext.InventoryListMaterialToUpdate != null && CurrentHoldMaterial != null) return AppDataBaseContext.InventoryListMaterialToUpdate.Include(x => x.MaterialNomenclature).Include(x => x.HoldMaterial).Where(x => x.HoldMaterial == CurrentHoldMaterial && x.IsLoaded == false).ToList();
                 return new List<ElementMaterialToUpload>();
             }
-        }
+        }*/
         public void SetCurrentInventoryObject(int id)
         {
-            CurrentInventoryObject = InventoryObjectMobiles.First(x => x.Id == id);
+            CurrentInventoryObject = InventoryObjects.First(x => x.Id == id);
         }
-        */
+        
 
         public void SetCurrentInstrumentHold(int id)
         {

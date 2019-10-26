@@ -5,6 +5,7 @@ using Revisor.ViewModel.Command;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Revisor.ViewModel
 {
@@ -38,9 +39,9 @@ namespace Revisor.ViewModel
         public async void ExecuteSelectHold(object parameter)
         {
 
-          //  LocalContext.SetCurrentMaterialHold(((HoldMaterial)((ItemTappedEventArgs)parameter).Item).Id);
-         //  ViewModelService.OneMaterialHoldViewModel.Update();
-           // await Shell.Current.Navigation.PushAsync(ViewService.OneMaterialHold);
+            LocalContext.SetCurrentMaterialHold(((Hold)((ItemTappedEventArgs)parameter).Item).Id);
+         ViewModelService.OneMaterialHoldViewModel.Update();
+           await Shell.Current.Navigation.PushAsync(ViewService.OneMaterialHold);
         }
         public bool CanExecuteSelectHold(object parameter)
         {

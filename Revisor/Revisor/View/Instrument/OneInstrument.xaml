@@ -3,13 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converter="clr-namespace:Revisor.View.Converter"
              mc:Ignorable="d"
              x:Class="Revisor.View.OneInstrument">
     <ContentPage.Resources>
-      <!--  <converter:VisabilityImageConverter x:Key="VisabilityImageConverter"></converter:VisabilityImageConverter>
+         <converter:VisabilityImageConverter x:Key="VisabilityImageConverter"></converter:VisabilityImageConverter>
         <converter:VisabilityButtonConverter x:Key="VisabilityButtonConverter"></converter:VisabilityButtonConverter>
         <converter:INotVisibleConverter x:Key="INotVisibleConverter"></converter:INotVisibleConverter>
--->
+ 
     </ContentPage.Resources>
 
     <ScrollView>
@@ -25,11 +26,11 @@
 
             <StackLayout>
                 <StackLayout  Orientation="Horizontal" >
-                  
+                    <CheckBox  x:Name="c1" CheckedChanged="C1_CheckedChanged"   />
                     <Label Text="Существующий инструмент"></Label>
                 </StackLayout>
                 <StackLayout  Orientation="Horizontal" >
-                  
+                    <CheckBox  IsChecked="{Binding IsNewElement,Mode=TwoWay}" x:Name="c2"   CheckedChanged="C2_CheckedChanged"/>
                     <Label Text="Новый инструмент" ></Label>
                 </StackLayout>
             </StackLayout>

@@ -1,4 +1,6 @@
 ﻿using InventoryModels;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 using Revisor.Service;
 using Revisor.ViewModel.Base;
 using Revisor.ViewModel.Command;
@@ -31,8 +33,8 @@ namespace Revisor.ViewModel
 
         #region OldElement
 
-     //   private InstrumnetHeader selectedInstrumnetHeader;
-       ///public InstrumnetHeader SelectedInstrumnetHeader { get => selectedInstrumnetHeader; set { selectedInstrumnetHeader = value; OnPropertyChanged("SelectedInstrumnetHeader"); SaveElement.RaiseCanExecuteChanged(); } }
+       private KnownInstrument selectedKnownInstrument;
+       public KnownInstrument SelectedKnownInstrument { get => selectedKnownInstrument; set { selectedKnownInstrument = value; OnPropertyChanged("SelectedKnownInstrument"); SaveElement.RaiseCanExecuteChanged(); } }
 
         #endregion
 
@@ -62,7 +64,7 @@ namespace Revisor.ViewModel
 
 
         public async void ExecuteTakeFoto(object parameter)
-        {/*
+        {
             if (CrossMedia.Current.IsCameraAvailable && CrossMedia.Current.IsTakePhotoSupported)
             {
                 MediaFile file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
@@ -77,7 +79,7 @@ namespace Revisor.ViewModel
                 ImageSource = (file.Path);
             };
 
-            */
+             
 
 
         }
