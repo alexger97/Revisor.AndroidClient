@@ -24,7 +24,7 @@
                 </ListView.ItemTemplate>
                 <ListView.Behaviors>
                   <!--  <local2:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SelectHold}" CommandParameter="{Binding Id}"></local2:EventToCommandBehavior>
-               --> </ListView.Behaviors>
+                --></ListView.Behaviors>
             </ListView>
         </StackLayout>
     </ContentPage.Content>

@@ -6,9 +6,10 @@
              mc:Ignorable="d"
              x:Class="Revisor.View.OneMaterialHold">
     <ContentPage.Resources>
-       <!-- <converter:IsSynchronizeDescriptionConverter x:Key="IsSynchronizeDescriptionConverter"></converter:IsSynchronizeDescriptionConverter>
+        <!--<converter:IsSynchronizeDescriptionConverter x:Key="IsSynchronizeDescriptionConverter"></converter:IsSynchronizeDescriptionConverter>
         <converter:VisabilityLabelXKeyConverter x:Key="VisabilityLabelXKeyConverter" ></converter:VisabilityLabelXKeyConverter>
-   --> </ContentPage.Resources>
+  -->
+        </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem  Command="{Binding AddnewElement}" 
                       IconImageSource="addpic.png" />
@@ -49,8 +50,8 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 <ListView.Behaviors>
-                   <!-- <local2:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SelectForEding}" CommandParameter="{Binding Id}"></local2:EventToCommandBehavior>
-              -->  </ListView.Behaviors>
+                  <!--  <local2:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SelectForEding}" CommandParameter="{Binding Id}"></local2:EventToCommandBehavior>
+               --> </ListView.Behaviors>
             </ListView>
         </StackLayout>
     </ContentPage.Content>

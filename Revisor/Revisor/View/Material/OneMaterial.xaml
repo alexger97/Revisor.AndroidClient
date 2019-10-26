@@ -6,9 +6,9 @@
              mc:Ignorable="d"
              x:Class="Revisor.View.OneMaterial">
     <ContentPage.Resources>
-       <!-- <converter:INotVisibleConverter x:Key="INotVisibleConverter" ></converter:INotVisibleConverter>
-        <converter:ButtonContentConverter x:Key="ButtonContentConverter"/>
-  -->  </ContentPage.Resources>
+        <!--  <converter:INotVisibleConverter x:Key="INotVisibleConverter" ></converter:INotVisibleConverter>
+        <converter:ButtonContentConverter x:Key="ButtonContentConverter"/>-->
+    </ContentPage.Resources>
 
     <ContentPage.Content >
         <ScrollView    >

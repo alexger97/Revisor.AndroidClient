@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="Revisor.View.OneInstrumentHold">
     <ContentPage.Resources>
-       <!-- <converter:IsSynchronizeDescriptionConverter x:Key="IsSynchronizeDescriptionConverter"></converter:IsSynchronizeDescriptionConverter>
+        <!--  <converter:IsSynchronizeDescriptionConverter x:Key="IsSynchronizeDescriptionConverter"></converter:IsSynchronizeDescriptionConverter>
         <converter:VisabilityLabelXKeyConverter x:Key="VisabilityLabelXKeyConverter" ></converter:VisabilityLabelXKeyConverter>
    -->
         </ContentPage.Resources>
