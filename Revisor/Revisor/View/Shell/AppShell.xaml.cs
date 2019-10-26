@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Revisor.View.Shell
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AppShell : Xamarin.Forms.Shell
+    public partial class AppShell  
     {
         public AppShell()
         {

@@ -1,8 +1,10 @@
-﻿using Revisor.ViewModel.Base;
+﻿using Revisor.Service;
+using Revisor.ViewModel.Base;
 using Revisor.ViewModel.Command;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Revisor.ViewModel
 {
@@ -64,10 +66,6 @@ namespace Revisor.ViewModel
         {
             return true;
         }
-
-
-
-
 
 
     }

@@ -1,12 +1,14 @@
-﻿using Revisor.ViewModel.Base;
+﻿using Revisor.Service;
+using Revisor.ViewModel.Base;
 using Revisor.ViewModel.Command;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Revisor.ViewModel
 {
-    class MainViewModel: ViewModelBase
+   public class MainViewModel: ViewModelBase
     {
 
 
@@ -29,8 +31,8 @@ namespace Revisor.ViewModel
         public async void ExecuteSelectFirstButton(object parameter)
         {
 
-            ViewModelService.ListOfObjectsViewModel.Update();
-            await Shell.Current.Navigation.PushAsync(ViewService.ListOfObjects);
+          //  ViewModelService.ListOfObjectsViewModel.Update();
+         //   await Shell.Current.Navigation.PushAsync(ViewService.ListOfObjects);
         }
         public bool CanExecuteSelectFirstButton(object parameter)
         {
@@ -59,8 +61,8 @@ namespace Revisor.ViewModel
         public async void ExecuteSelectSecondButton(object parameter)
         {
 
-            ViewModelService.SettingsView.Update();
-            await Shell.Current.Navigation.PushAsync(ViewService.Setings);
+           // ViewModelService.SettingsView.Update();
+          //  await Shell.Current.Navigation.PushAsync(ViewService.Setings);
         }
         
 

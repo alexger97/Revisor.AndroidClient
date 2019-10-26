@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Revisor.Data
 {
-    class AppDataContext : DbContext
+ public   class AppDataContext : DbContext
     {
         private string _databasePath;
         public DbSet<Hold> Holds { get; set; }
@@ -26,6 +26,9 @@ namespace Revisor.Data
         public DbSet<KnownInstrument> KnowInstruments { get; set; }
 
         public DbSet<Nomenclature> Nomenclatures { get; set; }
+
+        public DbSet<InventoryObject> InventoryObjects { get; set; }
+
 
         public AppDataContext(string databasePath)
         {

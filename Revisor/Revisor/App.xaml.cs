@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Revisor.Data;
+using Revisor.Interfaces;
+using Revisor.Service;
+using Revisor.ViewModel;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +14,25 @@ namespace Revisor
         {
             InitializeComponent();
 
-           // MainPage =// new MainPage();
+            var con = DependencyService.Get<IPath>().GetDatabasePath("atica4.db");
+            var AppContext = new AppDataContext(con);
+
+            LocalContextService localContextService = new LocalContextService(AppContext);
+            ViewModelService.MainPageViewModel = new MainViewModel();
+            ViewModelService.ListOfObjectsViewModel = new ListOfObjectsViewModel(localContextService);
+            ViewModelService.SelectTypeOfWorkViewModel = new SelectTypeOfWorkViewModel();
+            ViewModelService.ListOfInstrumentHoldsListViewModel = new ListOfInstrumentHoldsListViewModel(localContextService);
+
+            ViewModelService.ListOfMaterialHoldsListViewModel = new ListOfMaterialHoldsListViewModel(localContextService);
+
+
+
+
+
+
+
+
+            // MainPage =// new MainPage();
         }
 
         protected override void OnStart()

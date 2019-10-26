@@ -1,6 +1,11 @@
-﻿using System;
+﻿using InventoryModels;
+using Revisor.Service;
+using Revisor.ViewModel.Base;
+using Revisor.ViewModel.Command;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Revisor.ViewModel
 {
@@ -8,10 +13,10 @@ namespace Revisor.ViewModel
         public class ListOfInstrumentHoldsListViewModel : ViewModelBase
         {
 
-            public ListOfInstrumentHoldsListViewModel(LocalContext localContext) => LocalContext = localContext;
-            public LocalContext LocalContext { get; set; }
+            public ListOfInstrumentHoldsListViewModel(LocalContextService localContext) => LocalContext = localContext;
+            public LocalContextService LocalContext { get; set; }
 
-            public List<HoldInstrument> HoldInstruments { get { return LocalContext.ListIntrumentHolds; } }
+            public List<Hold> HoldInstruments { get { return LocalContext.ListInstrumentHolds; } }
 
             public void Update() => OnPropertyChanged("HoldInstruments");
 
@@ -34,7 +39,7 @@ namespace Revisor.ViewModel
 
             public async void ExecuteSelectHold(object parameter)
             {
-                LocalContext.SetCurrentInstrumentHold(((HoldInstrument)((ItemTappedEventArgs)parameter).Item).Id);
+                LocalContext.SetCurrentInstrumentHold(((Hold)((ItemTappedEventArgs)parameter).Item).Id);
                 ViewModelService.OneInstrumnetHoldViewModel.Update();
                 await Shell.Current.Navigation.PushAsync(ViewService.OneInstrumentHold);
             }

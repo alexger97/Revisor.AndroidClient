@@ -1,4 +1,8 @@
-﻿using System;
+﻿using InventoryModels;
+using Revisor.Service;
+using Revisor.ViewModel.Base;
+using Revisor.ViewModel.Command;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,13 +11,13 @@ namespace Revisor.ViewModel
     public class ListOfObjectsViewModel : ViewModelBase
     {
 
-        public ListOfObjectsViewModel(LocalContext localContext) => LocalContext = localContext;
-        public LocalContext LocalContext { get; set; }
+        public ListOfObjectsViewModel(LocalContextService localContext) => LocalContext = localContext;
+        public LocalContextService LocalContext { get; set; }
         public List<InventoryObject> InventoryObjectMobiles
         {
             get
             {
-                if (LocalContext.InventoryObjectMobiles != null) { return LocalContext.InventoryObjectMobiles; }
+                if (LocalContext.InventoryObjects != null) { return LocalContext.InventoryObjects; }
                 return new List<InventoryObject>();
             }
         }
@@ -38,9 +42,9 @@ namespace Revisor.ViewModel
         public async void ExecuteSelectObjectClick(object parameter)
         {
             var o = parameter;
-            LocalContext.SetCurrentInventoryObject((int)o);
+           // LocalContext.SetCurrentInventoryObject((int)o);
 
-            await Shell.Current.Navigation.PushAsync(ViewService.SelectTypeWork);
+           // await Shell.Current.Navigation.PushAsync(ViewService.SelectTypeWork);
         }
         public bool CanExecuteSelectObjectClick(object parameter)
         {

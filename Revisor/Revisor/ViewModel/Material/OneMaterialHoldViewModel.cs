@@ -1,4 +1,8 @@
-﻿using System;
+﻿using InventoryModels;
+using Revisor.Service;
+using Revisor.ViewModel.Base;
+using Revisor.ViewModel.Command;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,9 +10,9 @@ namespace Revisor.ViewModel
 {
     public class OneMaterialHoldViewModel : ViewModelBase
     {
-        public OneMaterialHoldViewModel(LocalContext localContext) => LocalContext = localContext;
-        public LocalContext LocalContext { get; set; }
-        public List<ElementMaterialToUpload> LocalSaveElements { get => LocalContext.LocalSavedMaterialForOneHold; }
+        public OneMaterialHoldViewModel(LocalContextService localContext) => LocalContext = localContext;
+        public LocalContextService LocalContext { get; set; }
+      //  public List<ElementMaterialToUpload> LocalSaveElements { get => LocalContext.; }
 
 
 
@@ -30,8 +34,8 @@ namespace Revisor.ViewModel
 
         public async void ExecuteAddnewElement(object parameter)
         {
-            ViewModelService.OneMaterialViewModel.Update();
-            await Shell.Current.Navigation.PushAsync(ViewService.OneMaterial);
+         //   ViewModelService.OneMaterialViewModel.Update();
+          //  await Shell.Current.Navigation.PushAsync(ViewService.OneMaterial);
         }
         public bool CanExecuteAddnewElement(object parameter)
         {
@@ -59,8 +63,8 @@ namespace Revisor.ViewModel
         {
 
 
-            ViewModelService.OneMaterialViewModel.ImportElement((ElementMaterialToUpload)((ItemTappedEventArgs)parameter).Item);
-            await Shell.Current.Navigation.PushAsync(ViewService.OneMaterial);
+       //     ViewModelService.OneMaterialViewModel.ImportElement((ElementMaterialToUpload)((ItemTappedEventArgs)parameter).Item);
+       //     await Shell.Current.Navigation.PushAsync(ViewService.OneMaterial);
 
         }
         public bool CanExecuteSelectForEding(object parameter)

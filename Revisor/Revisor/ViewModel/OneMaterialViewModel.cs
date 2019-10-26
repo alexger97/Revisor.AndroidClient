@@ -1,4 +1,5 @@
-﻿using Revisor.Service;
+﻿using InventoryModels;
+using Revisor.Service;
 using Revisor.ViewModel.Base;
 using Revisor.ViewModel.Command;
 using System;
@@ -9,11 +10,11 @@ namespace Revisor.ViewModel
 {
     public class OneMaterialViewModel : ViewModelBase
     {
-        public OneMaterialViewModel(LocalContext localContext)
+        public OneMaterialViewModel(LocalContextService localContext)
         {
             LocalContext = localContext;
         }
-        LocalContext LocalContext { get; set; }
+        LocalContextService LocalContext { get; set; }
 
         #region ForEding
         private string edingcount;
@@ -46,7 +47,7 @@ namespace Revisor.ViewModel
 
         public void ImportElement(ElementMaterialToUpload elementMaterialToUpload)
         {
-            Update();
+           /* Update();
             if (elementMaterialToUpload.MaterialNomenclature != null)
             {
                 this.SelectedMaterialNomenclature = elementMaterialToUpload.MaterialNomenclature;
@@ -60,7 +61,7 @@ namespace Revisor.ViewModel
             }
             ElementMaterialToEdit = elementMaterialToUpload;
             IsForEding = true;
-
+            */
         }
 
 
@@ -95,8 +96,8 @@ namespace Revisor.ViewModel
 
         public async void ExecuteSelectFromNomenclarture(object parameter)
         {
-            ViewModelService.SelectNomenclatureMaterialViewModel.Update();
-            await Shell.Current.Navigation.PushAsync(ViewService.SelectMaterialNomenclature);
+         //   ViewModelService.SelectNomenclatureMaterialViewModel.Update();
+         //   await Shell.Current.Navigation.PushAsync(ViewService.SelectMaterialNomenclature);
         }
         public bool CanExecuteSelectFromNomenclarture(object parameter)
         {
@@ -124,7 +125,7 @@ namespace Revisor.ViewModel
 
         public async void ExecuteSaveElement(object parameter)
         {
-            double res;
+         /*   double res;
             if (double.TryParse(Count, out res))
             {
                 if (IsNotNomenclature)
@@ -146,7 +147,7 @@ namespace Revisor.ViewModel
                 ViewModelService.ListMaterialElementsForSynchronization.Update();
                 await Shell.Current.Navigation.PopAsync();
 
-            }
+            }*/
         }
         public bool CanExecuteSaveElement(object parameter)
         {
@@ -225,7 +226,7 @@ namespace Revisor.ViewModel
 
                         }
                     }
-                    LocalContext.AppDataBaseContext.SaveChanges();
+                ///   LocalContext.AppDataBaseContext.SaveChanges();
                     ViewModelService.OneMaterialHoldViewModel.Update();
                 }
             }

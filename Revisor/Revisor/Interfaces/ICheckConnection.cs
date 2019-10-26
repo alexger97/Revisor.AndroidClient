@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Revisor.Interfaces
 {
-    interface ICheckConnection
+  public  interface ICheckConnection
     {
         bool IsUse { get; set; }
     }

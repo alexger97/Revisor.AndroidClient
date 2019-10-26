@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Revisor.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page1 : ContentPage
+    public partial class OneInstrument : ContentPage
     {
-        public Page1()
+        public OneInstrument()
         {
             InitializeComponent();
         }

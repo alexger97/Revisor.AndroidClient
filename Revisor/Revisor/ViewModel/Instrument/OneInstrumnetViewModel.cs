@@ -1,16 +1,19 @@
-﻿using Revisor.ViewModel.Base;
+﻿using InventoryModels;
+using Revisor.Service;
+using Revisor.ViewModel.Base;
 using Revisor.ViewModel.Command;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Revisor.ViewModel
 {
     public class OneInstrumnetViewModel : ViewModelBase
     {
 
-        public LocalContext LocalContext { get; set; }
-        public OneInstrumnetViewModel(LocalContext localContext) => LocalContext = localContext;
+        public LocalContextService LocalContext { get; set; }
+        public OneInstrumnetViewModel(LocalContextService localContext) => LocalContext = localContext;
 
 
 
@@ -28,15 +31,15 @@ namespace Revisor.ViewModel
 
         #region OldElement
 
-        private InstrumnetHeader selectedInstrumnetHeader;
-        public InstrumnetHeader SelectedInstrumnetHeader { get => selectedInstrumnetHeader; set { selectedInstrumnetHeader = value; OnPropertyChanged("SelectedInstrumnetHeader"); SaveElement.RaiseCanExecuteChanged(); } }
+     //   private InstrumnetHeader selectedInstrumnetHeader;
+       ///public InstrumnetHeader SelectedInstrumnetHeader { get => selectedInstrumnetHeader; set { selectedInstrumnetHeader = value; OnPropertyChanged("SelectedInstrumnetHeader"); SaveElement.RaiseCanExecuteChanged(); } }
 
         #endregion
 
         #region NewElement
 
-        private InstrumentNomenclature nomenclature;
-        public InstrumentNomenclature Nomenclature { get => nomenclature; set { nomenclature = value; OnPropertyChanged("Nomenclature"); SaveElement.RaiseCanExecuteChanged(); } }
+        private  Nomenclature nomenclature;
+        public  Nomenclature Nomenclature { get => nomenclature; set { nomenclature = value; OnPropertyChanged("Nomenclature"); SaveElement.RaiseCanExecuteChanged(); } }
 
         private string xkey;
         public string XKey { get => xkey; set { xkey = value; OnPropertyChanged("XKey"); SaveElement.RaiseCanExecuteChanged(); } }
@@ -59,7 +62,7 @@ namespace Revisor.ViewModel
 
 
         public async void ExecuteTakeFoto(object parameter)
-        {
+        {/*
             if (CrossMedia.Current.IsCameraAvailable && CrossMedia.Current.IsTakePhotoSupported)
             {
                 MediaFile file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
@@ -74,7 +77,7 @@ namespace Revisor.ViewModel
                 ImageSource = (file.Path);
             };
 
-
+            */
 
 
         }
@@ -103,8 +106,8 @@ namespace Revisor.ViewModel
 
         public async void ExecuteSelectFromNomenclarture(object parameter)
         {
-            ViewModelService.SelectNomenclatureViewModel.Update();
-            await Shell.Current.Navigation.PushAsync(ViewService.SelectNomenclaturePage);
+         //   ViewModelService.SelectNomenclatureViewModel.Update();
+          //  await Shell.Current.Navigation.PushAsync(ViewService.SelectNomenclaturePage);
         }
         public bool CanExecuteSelectFromNomenclarture(object parameter)
         {
@@ -136,8 +139,8 @@ namespace Revisor.ViewModel
 
         public async void ExecuteSelectFromListElements(object parameter)
         {
-            ViewModelService.SelectElementViewModel.Update();
-            await Shell.Current.Navigation.PushAsync(ViewService.SelectElementPage);
+          //  ViewModelService.SelectElementViewModel.Update();
+          //  await Shell.Current.Navigation.PushAsync(ViewService.SelectElementPage);
         }
         public bool CanExecuteSelectFromListElements(object parameter)
         {
@@ -193,7 +196,7 @@ namespace Revisor.ViewModel
 
         public async void ExecuteSaveElement(object parameter)
         {
-
+            /*
             if (IsNewElement)
             {
                 if (Autogen) LocalContext.AppDataBaseContext.InventoryListInstrumentToUpdate.Add(new ElementInstrumentToUpload { HoldInstrument = LocalContext.CurrentHoldInstrument, ImagePhoneSource = ImageSource, Nomenclature = Nomenclature, XKey = null });
@@ -207,7 +210,7 @@ namespace Revisor.ViewModel
 
             ViewModelService.OneInstrumnetHoldViewModel.Update();
             ViewModelService.ListElementsForSynchroniztionViewModel.Update();
-            await Shell.Current.Navigation.PopAsync();
+            await Shell.Current.Navigation.PopAsync();*/
         }
         public bool CanExecuteSaveElement(object parameter)
         {
@@ -225,7 +228,7 @@ namespace Revisor.ViewModel
                 }
                 else
                 {
-                    if (SelectedInstrumnetHeader != null) return true;
+                   // if (SelectedInstrumnetHeader != null) return true;
                 }
             }
             return false;
@@ -236,7 +239,7 @@ namespace Revisor.ViewModel
             IsNewElement = false;
             ImageSource = "";
             Autogen = false;
-            SelectedInstrumnetHeader = null;
+            //SelectedInstrumnetHeader = null;
             Nomenclature = null;
             XKey = "";
         }
