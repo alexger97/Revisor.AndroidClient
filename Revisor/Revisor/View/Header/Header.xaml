@@ -1,0 +1,11 @@
+﻿<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Revisor.View.Header"
+             HeightRequest="200">
+    <Grid BackgroundColor="White">
+        <Image Aspect="AspectFill"
+               Source="revizor.png"
+               Opacity="0.6" />
+
+    </Grid>
+</ContentView>

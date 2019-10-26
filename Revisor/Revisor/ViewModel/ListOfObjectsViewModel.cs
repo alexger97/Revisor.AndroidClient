@@ -13,7 +13,7 @@ namespace Revisor.ViewModel
 
         public ListOfObjectsViewModel(LocalContextService localContext) => LocalContext = localContext;
         public LocalContextService LocalContext { get; set; }
-        public List<InventoryObject> InventoryObjectMobiles
+        public List<InventoryObject> InventoryObjects
         {
             get
             {
@@ -51,6 +51,6 @@ namespace Revisor.ViewModel
             return true;
         }
 
-        public void Update() => OnPropertyChanged("InventoryObjectMobiles");
+        public void Update() => OnPropertyChanged("InventoryObjects");
     }
 }

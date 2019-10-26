@@ -7,9 +7,9 @@
              x:Class="Revisor.View.MainPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Вас приветствует програмное решение Ревизор" Margin="0,15,0,0"/>
-            <Button Text="Выбрать объект" BackgroundColor="Transparent" BorderColor="Blue" BorderWidth="0.4"/>
-            <Button Text="Настройки" BackgroundColor="Transparent" BorderColor="Blue" BorderWidth="0.4"/>
+            <Label Text="Вас приветствует програмное решение Ревизор" Margin="0,15,0,0"  FontSize="Large" BackgroundColor="Black"/>
+            <Button Text="Выбрать объект" Command="{Binding SelectFirstButton}" BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="Blue" BorderWidth="0.4"/>
+            <Button Text="Настройки" BackgroundColor="Transparent" Margin="0,15,0,0" BorderColor="Blue" BorderWidth="0.4"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

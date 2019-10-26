@@ -1,6 +1,7 @@
 ﻿using Revisor.Data;
 using Revisor.Interfaces;
 using Revisor.Service;
+using Revisor.View.Shell;
 using Revisor.ViewModel;
 using System;
 using Xamarin.Forms;
@@ -16,8 +17,9 @@ namespace Revisor
 
             var con = DependencyService.Get<IPath>().GetDatabasePath("atica4.db");
             var AppContext = new AppDataContext(con);
-
-            LocalContextService localContextService = new LocalContextService(AppContext);
+            AppContext.InventoryObjects.Add(new InventoryModels.InventoryObject() { Name = "Первый объект" });
+            AppContext.SaveChanges();
+           LocalContextService localContextService = new LocalContextService(AppContext);
             ViewModelService.MainPageViewModel = new MainViewModel();
             ViewModelService.ListOfObjectsViewModel = new ListOfObjectsViewModel(localContextService);
             ViewModelService.SelectTypeOfWorkViewModel = new SelectTypeOfWorkViewModel();
@@ -25,6 +27,11 @@ namespace Revisor
 
             ViewModelService.ListOfMaterialHoldsListViewModel = new ListOfMaterialHoldsListViewModel(localContextService);
 
+            ViewService.MainPage = new View.MainPage() { BindingContext = ViewModelService.MainPageViewModel };
+            ViewService.LsitOfObjects = new View.LsitOfObjects() { BindingContext = ViewModelService.ListOfObjectsViewModel };
+            ViewService.SelectTypeOfWork = new View.SelectTypeOfWork() { BindingContext = ViewModelService.SelectTypeOfWorkViewModel };
+
+            MainPage = new AppShell();
 
 
 

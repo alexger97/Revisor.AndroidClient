@@ -31,8 +31,8 @@ namespace Revisor.ViewModel
         public async void ExecuteSelectFirstButton(object parameter)
         {
 
-          //  ViewModelService.ListOfObjectsViewModel.Update();
-         //   await Shell.Current.Navigation.PushAsync(ViewService.ListOfObjects);
+         ViewModelService.ListOfObjectsViewModel.Update();
+         await Shell.Current.Navigation.PushAsync(ViewService.LsitOfObjects);
         }
         public bool CanExecuteSelectFirstButton(object parameter)
         {

@@ -7,7 +7,7 @@
              x:Class="Revisor.View.LsitOfObjects">
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding InventoryObjectMobiles}" x:Name="ls">
+            <ListView ItemsSource="{Binding InventoryObjects}" x:Name="ls">
                 <ListView.Header>
 
                     <Label Text="Список объектов инвенторизации" Margin="0,25,0,25" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" LineBreakMode="TailTruncation"/>
